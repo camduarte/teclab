@@ -46,10 +46,10 @@ int main()
 
     cout << endl << "¡Juego de adivinanzas de números!" << endl << endl;
 
-    cout << "Ingrese el límite inferior: ";
+    cout << "Ingrese el límite inferior del rango: ";
     cin >> limiteInferior;
 
-    cout << "Ingrese el límite superior: ";
+    cout << "Ingrese el límite superior del rango: ";
     cin >> limiteSuperior;
 
     cout << "Ingrese la cantidad máxima de intentos: ";
@@ -61,7 +61,7 @@ int main()
     uniform_int_distribution<> distrib(limiteInferior, limiteSuperior);
     numAleatorio = distrib(gen);
 
-    // almacena los numeros jugados por el usuario.
+    // almacena los números jugados por el usuario.
     int numJugados[maxIntentos];
     
     // Inicializo la cantidad de intentos restantes
@@ -69,7 +69,9 @@ int main()
 
     do 
     {
-        cout << endl << "¿Cuál es el número secreto?: ";
+        cout << endl << "¿Cuál es el número secreto entre " 
+             << limiteInferior << " y " << limiteSuperior 
+             << "?: ";
         cin >> numUsuario;
 
         // Verifico si el número ingresado ya fue jugado.
